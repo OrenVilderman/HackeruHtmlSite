@@ -1,0 +1,363 @@
+
+header {
+    display: grid;
+    grid-template-columns: 8% 84% 8%;
+}
+
+#myImgR { 
+	transform-origin:50% 50%;
+	animation:3s rotateLeft 3s forwards; 
+	animation-iteration-count: 3;
+}
+
+#myImgL { 
+	transform-origin:50% 50%;
+	animation:3s rotateRight 12s forwards;
+	animation-iteration-count: 3;	
+}
+
+@keyframes rotateLeft{
+	100%{ transform:rotate(-360deg); }
+}
+
+@keyframes rotateRight{
+	100%{ transform:rotate(360deg); }
+}
+
+header h1 {
+	margin: 2% 0 3% 0;
+	color: #343434;
+	font-weight: bold;
+	font-family: 'Ultra', sans-serif;   
+	font-size: 450%;
+	line-height: 40%;
+	text-transform: uppercase;
+	text-shadow: 0 2px white, 0 3px #777;
+}
+
+header h2 {
+	margin: 2% 0 2% 0;
+	color: #343434;
+	font-weight: bold;
+	font-size: 150%;
+	line-height: 100%;
+	font-family: 'Orienta', sans-serif;
+}
+
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+	color: #aad6be;
+	background-color: #1D4187;
+	overflow: hidden;
+	border: 1px solid #ccc;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+	color: #aad6be;
+	background-color: #1D4187;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+	font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+	color: #1D4187;
+	background-color: #aad6be;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+	color: black;
+	background-color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+	background-image: linear-gradient(#8e24aa, #0d47a1);
+	color: white;
+	font-weight: 700;
+	display: none;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-top: none;
+}
+
+.tabcontent button{
+	color: #450728;
+	background-color: #e969ff;
+	font-weight: bold;
+}
+
+.left{display:inline-block; float:left; width: 10%; height: 100px; padding: 5px;}
+.right{display:inline-block; float:right; width: 10%; height: 100px; padding: 5px;}
+.center{display:inline-block; float:center; width: 60%; height: 100px; padding: 5px;}
+.center button {
+	display: inline-block;
+	border-radius: 4px;
+	background-color: #1D4187 !important;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 16px;
+	padding: 20px 1px;
+	width: 165px;
+	max-height: 60px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 2px;
+}
+
+.center button span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.center button span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.center button:hover span {
+	padding-right: 30px;
+}
+
+.center button:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+
+.Form {
+	width: 250px;
+	clear: both;
+	}
+
+.Form input[type="text"]{
+	width: 100%;
+	clear: both;
+}
+
+.Form input[type="password"]{
+	width: 100%;
+	clear: both;
+}
+
+.Form input[type="submit"] {
+	background-color: #18FFFF;
+	font-weight: bold;
+	font-family: Comic;
+}
+
+.alert {
+	padding: 20px;
+	background-color: #f44336;
+	color: white;
+	opacity: 1;
+	transition: opacity 0.6s;
+	margin-bottom: 15px;
+}
+
+.success {
+    color: #ebebeb;
+    background-color: #4CAF50;
+    border-color: #d6e9c6;
+    display: none;
+	height: 20px;
+	width: 15%;
+	float: right;
+	font-size: 120%;
+	text-align: center;
+	padding: 1% 1px;
+	margin: 2px;
+}
+
+.failure {
+    color: #ebebeb;
+    background-color: #f44336;
+    border-color: #ebccd1;
+    display: none;
+	height: 20px;
+	width: 15%;
+	float: right;
+	font-size: 120%;
+	text-align: center;
+	padding: 1% 1px;
+	margin: 2px;
+}
+
+.warning {
+    color: #ebebeb;
+    background-color: #ff9800;
+    border-color: #faebcc;
+    display: none;
+	height: 20px;
+	width: 30%;
+	float: right;
+	font-size: 120%;
+	text-align: center;
+	padding: 1% 1px;
+	margin: 2px;
+}
+
+.successL {
+    color: #ebebeb;
+    background-color: #4CAF50;
+    border-color: #d6e9c6;
+    display: none;
+	height: 20px;
+	width: 15%;
+	float: right;
+	font-size: 120%;
+	text-align: center;
+	padding: 1% 1px;
+	margin: 2px;
+}
+
+.failureL {
+    color: #ebebeb;
+    background-color: #f44336;
+    border-color: #ebccd1;
+    display: none;
+	height: 20px;
+	width: 15%;
+	float: right;
+	font-size: 120%;
+	text-align: center;
+	padding: 1% 1px;
+	margin: 2px;
+}
+
+.collapsible {
+	background-color: #777;
+	color: white;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+}
+
+.active.collapsible:hover {
+	background-color: #aad6be;
+}
+
+.collapsible:after {
+	content: '\002B';
+	color: white;
+	font-weight: bold;
+	float: right;
+	margin-left: 5px;
+}
+
+.collapsible.active:after {
+	content: "\2212";
+}
+
+.content {
+	padding: 0 18px;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	background-image: linear-gradient(#6ebedf, #2751af);
+}
+
+#HackerStyle {
+	background-color: #8e24aa;
+	background-image: #0d47a1;
+}
+
+/* Buttons hover */
+.newHover button {
+	display: inline-block;
+	border-radius: 4px;
+	border: none;
+	text-align: center;
+	font-size: 100%;
+	padding: 20px 1px;
+	width: 20%;
+	max-width: 220px;
+	max-height: 60px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 2px;
+}
+
+.newHover button span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.newHover button span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.newHover button:hover span {
+	padding-right: 30px;
+}
+
+.newHover button:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+
+/* Form buttons hover */
+.newHover input[type='submit'] {
+	display: inline-block;
+	border-radius: 4px;
+	border: none;
+	text-align: center;
+	font-size: 110%;
+	padding: 4% 1px;
+	width: 30%;
+	max-height: 60px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 2px;
+}
+
+.newHover input[type='submit'] span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.newHover input[type='submit'] span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.newHover input[type='submit']:hover span {
+	padding-right: 30px;
+}
+
+.newHover input[type='submit']:hover span:after {
+	opacity: 1;
+	right: 0;
+}
