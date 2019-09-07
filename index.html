@@ -1,0 +1,352 @@
+<!doctype html>
+<html>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<title>HackerU Class by Oren Vilderman</title> 
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+	</head>
+	<body>
+		<header class="mainView" align="center">
+		     <div class="gif">
+				<img id="myImgR" style="width: 120%; float: left; padding: 50% 50% 50% 50%;" src="img/name.gif" alt="My Picture Oren Vilderman" onclick="window.open('https://github.com/OrenVilderman')">
+			</div>
+			<div>
+				<div class="alert-box success">Sing Up Succeeded</div>
+				<div class="alert-box failure">Sing Up Failed</div>
+				<div class="alert-box warning">You entered your password in a demo field</div>
+				<div class="alert-box successL">LogIn Succeeded</div>
+				<div class="alert-box failureL">LogIn Failed</div>
+				<br/><br/>
+				<h1 title="Created by Oren Vilderman">HackerU הספריה של</h1>
+				<h2 title="This is only a demo site, created by HackerU student in Israel">הפריצה שלך להייטק</h2>
+			</div>
+			<div class="gif">
+				<img id="myImgL" style="width: 120%; float: right; padding: 50% 50% 50% 50%;" src="img/name.gif" alt="My Picture Oren Vilderman" onclick="window.open('https://github.com/OrenVilderman')">
+			</div>
+		</header>
+		<main>
+		<div class="tab">
+			<button class="tablinks" onclick="openTab(event, 'SingUP')">Sing UP</button>
+			<button class="tablinks" onclick="openTab(event, 'LogIn')">LogIn</button>
+			<div id="membersArea" style="display: none;">
+				<button class="tablinks" onclick="openTab(event, 'firstClass')">First Class</button>
+				<button class="tablinks" onclick="openTab(event, 'secondClass')">Second Class</button>
+				<button class="tablinks" onclick="openTab(event, 'thirdClass')">Third Class</button>
+				<button class="tablinks" onclick="openTab(event, 'fourthClass')">Fourth Class</button>
+				<button class="tablinks" onclick="openTab(event, 'fifthClass')">Fifth Class</button>
+				<button class="tablinks" onclick="openTab(event, 'sixthClass')">Sixth Class</button>
+				<button class="tablinks" onclick="openTab(event, 'promptClass')">Prompts</button>
+			</div>
+		</div>
+		<div id="SingUP" class="tabcontent">
+			<h3>Sing UP</h3>
+			<p>Please insert your user name and password</p>
+			<form id="SingUPForm" class="Form newHover">
+				User Name: <input id="SingUPusername" type="text" placeholder="User Name | "/>
+				<br/><br/>
+				Password: <input id="SingUPpassword" type="password" placeholder="Password | "/>
+				<br/><br/>
+				<input type="submit" value="Sing Up">
+			</form>
+		</div>
+		<div id="LogIn" class="tabcontent">
+			<h3>LogIn</h3>
+			<p>Please insert your user name and password</p>
+			<form id="logInForm" class="Form newHover">
+				User Name: <input id="username" type="text" placeholder="User Name | "/>
+				<br/><br/>
+				Password: <input id="password" type="password" placeholder="Password | "/>
+				<br/><br/>
+				<input type="submit" value="LogIn">
+			</form>
+		</div>
+		<div id="firstClass" class="tabcontent">	
+			<button class="collapsible">In Class - Var Types</button>
+			<div class="content newHover">
+				<h3>Examples of var types</h3>
+				<textarea id="myTextArea1" rows="12" cols="100" style="font-size: 18px;" style="width:100%;"></textarea>
+				<br/>
+				<button class="button" onclick="test(1)" style="background-color: red;"><span>Run</span></button>
+				<button class="button" onclick="integratedTest(testStrings[0], 1)" style="background-color: orange;"><span>Hello Word Text</span></button>
+				<button class="button" onclick="integratedTest(testStrings[1], 1)" style="background-color: orange;"><span>In Class Text</span></button>
+				<br/><br/>
+			</div>
+			<button class="collapsible">Exercise 1 - Button</button>
+			<div class="content newHover">
+				<h3>Click on the buttons to change the paragraph's text</h3>
+				<button align="left" onclick="shrinkText()" ><span>shrink Text</span></button>
+				<button align="right" onclick="revertText()" ><span>revert Text</span></button>
+				<p id="pera1">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+					<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+					<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+					<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+					<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+					<br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					<br/>
+				</p>
+			</div>
+			<button class="collapsible">Exercise 2 - Functions</button>
+			<div class="content newHover">
+				<h3>Examples of basic functions</h3>
+				<textarea id="myTextArea2" rows="7" cols="100" style="font-size: 18px;" style="width:100%;"></textarea>
+				<br/>
+				<button class="button" onclick="test(2)" style="background-color: red;"><span>Run</span></button>
+				<button class="button" onclick="integratedTest(testStrings[2], 2)" style="background-color: orange;"><span>Functions with numbers</span></button>
+				<button class="button" onclick="integratedTest(testStrings[3], 2)" style="background-color: orange;"><span>Print full name</span></button>
+				<br/><br/>
+			</div>
+			<button class="collapsible">Exercise 3 - Prompt</button>
+			<div class="content newHover">
+				<h3>Examples of basic Prompt</h3>
+				<textarea id="myTextArea3" rows="10" cols="100" style="font-size: 18px;" style="width:100%;"></textarea>
+				<br/>
+				<button class="button" onclick="test(3)" style="background-color: red;"><span>Run</span></button>
+				<button class="button" onclick="integratedTest(testStrings[4], 3)" style="background-color: orange;"><span>Example of prompt</span></button>
+				<br/><br/>
+			</div>
+			<button class="collapsible">Exercise 4 - Form</button>
+			<div class="content">
+				<h1>LogIn</h1>
+				<form id="firstLessonForm" class="Form">
+					User Name: <input id="logInExerciseName" type="text" placeholder="User Name | "/>
+					<br/><br/>
+					Password: <input id="logInExercisePassword" type="password" placeholder="password | "/>
+					<br/><br/>
+					<input onclick="logInExercise()" type="button" value="LogIn" style="font-family:'Comic';font-weight: bold; background-color: #e969ff;">
+					<input onclick="PromptlogIn2()" type="button" value="Prompt logIn" style="font-family:'Comic';font-weight: bold; background-color: #e969ff;">
+					<h6>*hackeru hacker123</h6>
+				</form>
+			</div>
+		</div>
+		<div id="secondClass" class="tabcontent">
+			<button class="collapsible">In Class - Course content</button>
+			<div class="content">
+				<h4>HTML+Variables</h4>
+				<h4>Functions+input</h4>
+				<h4>Loop+Array</h4>
+				<h4>Exercises</h4>
+				<h4>C#</h4>
+				<br/><br/>
+			</div>
+			<button class="collapsible">Exercise 1 - Input</button>
+			<div class="content newHover">
+				<h4>Please fill the fields with numbers</h4>
+				<hr/>
+				<input id="number1" min="0" max="999" placeholder="???"/>
+				<input id="number2" min="0" max="999" placeholder="???"/>
+				<input id="number3" min="0" max="999" placeholder="???"/>
+				<br/><br/>
+				<button onclick="getAllFields('addAllFields')"><span>Add</span></button>
+				<button onclick="getAllFields('MultiplyAllFields')"><span>Multiply</span></button>
+				<br/><br/>
+			</div>
+			<button class="collapsible">Exercise 1.1 - Input (Refactor)</button>
+			<div class="content newHover">
+				<h4>Please fill the fields with numbers</h4>
+				<hr/>
+				<input type="number" id="numb1"  placeholder="Please insert a number"/>
+				<input type="number" id="numb2"  placeholder="Please insert a number"/>
+				<input type="number" id="numb3"  placeholder="Please insert a number"/>
+				<br/><br/>
+				<button onclick="getAllFields2('addAllFields2')"><span>Add</span></button>
+				<button onclick="getAllFields2('MultiplyAllFields2')"><span>Multiply</span></button>
+				<br/><br/>
+			</div>
+			<button class="collapsible">Exercise 2 - Input Text</button>
+			<div class="content newHover">
+				<h4>Please fill the fields with words</h4>
+				<hr/>
+				<input id="str1" placeholder="Enter a name |"/>
+				<input id="str2" placeholder="Enter another name |"/>
+				<br/><br/>
+				<button onclick="getTextFields('firstNameFirst')"><span>First Name First</span></button>
+				<button onclick="getTextFields('firstNameSecond')"><span>First Name Second</span></button>
+				<br/><br/>
+			</div>
+			<button class="collapsible">Exercise 3 - Shop Discount</button>
+			<div class="content newHover">
+			<h4>Special Deals !!! Over 300 NIS Get 50 NIS off </h4>
+			<h4>Special Deals !!! Over 5 items 15% off </h4>
+			<h6>*No double discounts</h6>
+				<hr/>
+				
+				<input type="number" id="totalPrice"  placeholder="Total Price |"/>
+				<input type="number" id="itemAmount"  placeholder="Items Amount |"/>
+				<br/><br/>
+				<button onclick="buyItems()"><span>Buy Items</span></button>
+				<br/><br/>
+			</div>
+			<button id="changeHTML" class="collapsible">Exercise 4 - Tab Headline</button>
+			<div class="content newHover">
+				<h4>Select a new tab headline</h4>
+				<hr/>
+				<input type="text" id="newTabText"  placeholder="New Tab Text |"/>
+				<br/><br/>
+				<button onclick="changeTabText()"><span>Change Tab Text</span></button>
+				<br/><br/>
+			</div>
+			<button class="collapsible">Exercise 5 - The Kindergarten Coffers</button>
+			<div class="content newHover">
+				<h4>How much money will remain in the kindergarten coffers</h4>
+				<hr/>
+				<input type="number" id="costPerKid"  placeholder="Cost Per Kid |"/>
+				<input type="number" id="kidsT"  placeholder="kids Total |"/>
+				<input type="number" id="musicLessonPerMonth"  placeholder="Music Lesson Per Month |"/>
+				<input type="number" id="tripsCostT"  placeholder="Trips Cost Total |"/>
+				<input type="number" id="gardenWorkingMonths"  placeholder="Garden Working Months |"/>
+				<br/><br/>
+				<button onclick="calculateMoneyLeft()"><span>Calculate Money Left</span></button>
+				<br/><br/>
+			</div>
+			<button class="collapsible">Exercise 6 - The House Committee </button>
+			<div class="content newHover">
+				<h4>How much money maintains in the end of each month and in the end of the year</h4>
+				<hr/>
+				<input type="number" id="costPerFlat"  placeholder="Cost Per Flat |"/>
+				<input type="number" id="costCleanPerFloor"  placeholder="Cost Clean Per Floor |"/>
+				<input type="number" id="flatsPerFloor"  placeholder="Flats Per Floor |"/>
+				<input type="number" id="totalFloors"  placeholder="Total Floors |"/>
+				<br/><br/>
+				<button onclick="calculateCashLeft()"><span>Calculate Cash Left</span></button>
+				<br/><br/>
+			</div>
+		</div>
+		<div id="thirdClass" class="tabcontent">
+			<button class="collapsible">In Class - Loops</button>
+			<div class="content">
+				<h4>Print a name 10 times</h4>
+				<h4>Multiplication table</h4>
+				<h4>Print all numbers from 15 to 35</h4>
+				<h4>Reverse print the numbers</h4>
+				<h4>Print all even numbers up to the number given</h4>
+				<h4>Receive and print an array</h4>
+				<h4>Reverse print the array</h4>
+				<br/><br/>
+			</div>
+			<button class="collapsible">Exercise 1 - Print a name 10 times</button>
+			<div class="content newHover">
+				<p id="namePosition"></p>
+				<br/><br/>
+				<br/><br/>
+				<br/><br/>
+				<button onclick="printTenTimes()"><span>Print 10 Times</span></button>
+				<br/><br/>
+			</div>
+			<button class="collapsible">Exercise 2 - Multiplication table</button>
+			<div class="content newHover">
+				<p id="tablePosition"></p>
+				<br/><br/>
+				<br/><br/>
+				<br/><br/>
+				<button onclick="printMultiTable()"><span>Print Multiplication Table</span></button>
+				<br/><br/>
+				</div>
+				<button class="collapsible">Exercise 3 - Print all numbers</button>
+				<div class="content newHover">
+					<h5>*Click ESC key to close the prompt window faster</h5>
+					<br/><br/>
+					<br/><br/>
+					<br/><br/>
+					<button onclick="printNumbersUp()"><span>Print Numbers from 15 to 35</span></button>
+				<br/><br/>
+			</div>
+			<button class="collapsible">Exercise 4 - Reverse print the numbers</button>
+			<div class="content newHover">
+				<h5>*Click ESC key to close the prompt window faster</h5>
+				<br/><br/>
+				<br/><br/>
+				<br/><br/>
+				<button onclick="printNumbersDown()"><span>Print Numbers from 35 to 15</span></button>
+				<br/><br/>
+			</div>
+			<button class="collapsible">Exercise 5 - Print all even numbers up to the number given</button>
+			<div class="content newHover">
+				<h5>*Click ESC key to close the prompt window faster</h5>
+				<br/><br/>
+				<input type="number" id="userNumber"  placeholder="Insert a number |"/>
+				<br/><br/>
+				<button onclick="printNumbersEven()"><span>Print All Even number until</span></button>
+				<br/><br/>
+			</div>
+			<button class="collapsible">Exercise 6 - Receive and print an array</button>
+			<div class="content newHover">
+				<h5>*You will be asked to enter every value of the array</h5>
+				<h5>*Click ESC key to close the prompt window faster</h5>
+				<br/><br/>
+				<input type="number" id="arraySize"  placeholder="Size of the array |"/>
+				<br/><br/>
+				<button onclick="printAllWords()"><span>Print All Words</span></button>
+				<br/><br/>
+			</div>
+			<button class="collapsible">Exercise 7 - Reverse print the array</button>
+			<div class="content newHover">
+				<br/><br/>
+				<input type="number" id="arraySizeFlipped"  placeholder="Size of the array |"/>
+				<br/><br/>
+				<button onclick="printAllWordsFlipped()"><span>Print All Words Flipped</span></button>
+				<br/><br/>
+			</div>
+			<button class="collapsible">Exercise 8 - User Name Check</button>
+			<div class="content">
+				<h1>Insert your user name</h1>
+				<form id="justAForm" class="Form">
+					User Name: <input id="userNameToTest" type="text" placeholder="User Name | "/>
+					<br/><br/>
+					<input onclick="logInTest()" type="button" value="Test if i am a registered user" style="font-family:'Comic';font-weight: bold;background-color: #e969ff;">
+					<h6>*oren, aoren, boren, coren, popcorn</h6>
+				</form>
+			</div>
+		</div>
+		<div id="fourthClass" class="tabcontent">
+			<h3>Fourth Class</h3>
+			<p>The Fourth class yet did not start.</p> 
+		</div>
+		<div id="fifthClass" class="tabcontent">
+			<h3>Fifth Class</h3>
+			<p>The Fifth class yet did not start.</p> 
+		</div>
+		<div id="sixthClass" class="tabcontent">
+			<h3>Sixth Class</h3>
+			<p>The Sixth class yet did not start.</p> 
+		</div>
+		<div id="promptClass" class="tabcontent newHover">
+			<h3>Prompts</h3>
+			<p>These are some Prompt functions.</p>
+			<button onclick="PromptFullName()"><span>Prompt Full Name</span></button>
+			<button onclick="PromptCheckAge()"><span>Prompt Check Age</span></button>
+			<button onclick="PromptCheckAge2()"><span>Prompt Check Age 2</span></button>
+			<button onclick="PromptlogIn()"><span>Prompt LogIn</span></button>
+			<button onclick="PromptlogIn2()"><span>Prompt LogIn 2</span></button>
+			<button onclick="sumPrice()"><span>Sum Price</span></button>			
+			<button onclick="checkSize()"><span>Check Size</span></button>	
+			<button onclick="pyramidCounter()"><span>Pyramid Counter</span></button>
+			<button onclick="sumUntilZero()"><span>Sum Until Zero</span></button>
+			<button onclick="CreateSentence()"><span>Create Sentence</span></button>
+			<button onclick="isEven()"><span>Check If Even</span></button>
+			<h6>*hackeru hacker123</h6>
+		</div>
+		<br/><br/>
+		</main>
+		<div class="mainView" align="center">
+			<img id="imgHackeru" style="width: 40%;" src="img/hackeru.png" alt="hackeru picture">
+			<br/><br/>
+			<div class="left">
+				<h5>[:</h5>
+				<h5>[:</h5>
+				<h5>[:</h5>
+			</div>
+			<div class="center">
+				<button onclick="imgSizeMin()"><span>Shrink img</span></button>
+				<button onclick="imgSizeMid()"><span>Original img</span></button>	<button onclick="imgSizeMax()"><span>Supersize img</span></button>
+			</div>
+			<div class="right">
+				<h5>:]</h5>
+				<h5>:]</h5>
+				<h5>:]</h5>
+			</div>
+		</div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script defer src="js/main.txt"></script>
+	</body>
+</html>
