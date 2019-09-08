@@ -1,48 +1,3 @@
-//Sing Up and Log In
-document.querySelector("#SingUPForm").addEventListener("submit", function(e){
-    // Prevent the form from submitting
-    e.preventDefault();
-    // dbCreate() will be called when the form is submitted
-    dbCreate();
-});
-
-var userSinged;
-var passSinged;
-
-function dbCreate() {
-	userSinged = document.getElementById("SingUPusername").value;
-	passSinged = document.getElementById("SingUPpassword").value;
-	if(userSinged.length > 2 && passSinged.length > 2 ) {
-		userSinged = document.getElementById("SingUPusername").value;
-		passSinged = document.getElementById("SingUPpassword").value;
-		$( "div.success" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
-		return true;
-	} else {
-		$( "div.failure" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
-		return false;
-    }
-}
-
-document.querySelector("#logInForm").addEventListener("submit", function(e){
-    // Prevent the form from submitting
-    e.preventDefault();
-    // logIn() will be called when the form is submitted
-    logIn();
-});
-
-function logIn() {
-	var user = document.getElementById("username").value;
-	var pass = document.getElementById("password").value;
-	if(user == userSinged && pass == passSinged) {
-		document.querySelector("#membersArea").style.display = "block";
-		$( "div.successL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
-		return true;
-	} else {
-		$( "div.failureL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
-		return false;
-    }
-}
-
 //Run script from text configuration
 var testStrings = ["function helloWorldTemp() { \n	document.getElementById(\"myTextArea1\").value =\"Hello World!\";\n}\nhelloWorldTemp();",
 	"function showTypeAndValue(str) {\n	document.getElementById('myTextArea1').value = \"The type of the var is: 	\" + typeof(str) + \"\\nThe value of the var is: 	\" + str + \"\\nThe length of the var is: 	\" + ((typeof(str)==\"object\"||typeof(str)=='undefined')? \"Error there is not lenght to \" + typeof(str) : str.length)\n}\nvar name = \"Oren\"; 	//String\nvar num = 2; 		//Number\nvar num1; 		//Undefined\nvar num2 = null; 	//null=object\nshowTypeAndValue(name);",
@@ -75,19 +30,6 @@ function revertText(){
 	alert("The text will revert back");
 }
 
-function logInExercise() {
-	var user = document.getElementById("logInExerciseName").value;
-	var pass = document.getElementById("logInExercisePassword").value;
-	if(user == "hackeru" && pass == "hacker123") {
-		document.querySelector("#membersArea").style.display = "block";
-		$( "div.successL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
-		return true;
-	} else {
-		$( "div.failureL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
-		return false;
-    }
-}
-
 //In second class JS
 function getAllFields(runThis){
 	var number1 = Number(document.getElementById("number1").value);
@@ -103,7 +45,7 @@ function addAllFields (number1, number2, number3) {
 	alert("This is the sum of all the numbers: " + (number1+number2+number3));
 }
 function MultiplyAllFields (number1, number2, number3) {
-	alert("This is the mmultiply of all the numbers: " + (number1*number2*number3));
+	alert("This is the multiply of all the numbers: " + (number1*number2*number3));
 }
 
 function getAllFields2(runThis){
@@ -260,21 +202,96 @@ function printAllWordsFlipped(){
 	}
 }
 
-function logInTest(){
-	var usersArray = ["oren","aoren","boren","coren","popcorn"];
-		console.log(usersArray.length);
-		console.log(usersArray[0]);
-	for (i = 0; i < usersArray.length; i++) {
-		console.log(i);
-		console.log(usersArray[0]);
-		if (usersArray[i] == document.getElementById("userNameToTest").value){
-		/*if (usersArray[i] == userNameToTest.value) {*/
-			alert("You are logged in !!!");
-			break;
-		} else if (i == usersArray.length-1) {
-			alert("The password or user name is wrong");
+function printFibonacciNum(){
+	var intFibonacciNum = Number(fibonacciNum.value);
+	var tempintFibonacciNum = 0;
+	if (intFibonacciNum == 0) {
+		answerPosition.innerHTML = "The Fibonacci number at F(0) is 0";
+	} else if (intFibonacciNum == 1) {
+		answerPosition.innerHTML = "The Fibonacci number at F(1) is 1";
+	} else if (intFibonacciNum < 0){
+		answerPosition.innerHTML = "Invalid number";
+	} else {
+		var firstF = 0;
+		var secondF = 0;
+		var thridF = 1;
+		for (i = 2; i <= intFibonacciNum; i++) {
+			firstF = secondF;
+			secondF = thridF;
+			thridF = firstF+secondF;
+		}
+	answerPosition.innerHTML = "The Fibonacci number at F(" + intFibonacciNum + ") is " + thridF;
+	}
+}
+
+//In fourth class JS
+function printLargest(){
+	var intUserNumber = Number(arraySizeLargest.value);
+	var numbersArray = [];
+	for (var i = 0; i < intUserNumber; i++) {
+		numbersArray[i] = prompt("Enter the next number " + (i+1)+ "/" + intUserNumber);
+	}
+	var largestTemp = numbersArray[0];
+	for (var i = 0; i < numbersArray.length; i++) {
+		if (largestTemp < numbersArray[i]) {
+			largestTemp = numbersArray[i]
 		}
 	}
+	answerPositionLargest.innerHTML = "The Largest number in the array is:  " + largestTemp;
+}
+
+function printFlipFT(){
+	var arrayToPrint = "";
+	for (var i = 1; i <= 100; i++) {
+		if (i%3 == 0 && i%5 == 0) {
+			arrayToPrint += " FT</br>";
+		} else if (i%3 == 0) {
+			arrayToPrint += " T";
+		} else if (i%5 == 0) {
+			arrayToPrint += " F";
+		} else {
+			arrayToPrint += " " + i;
+		}
+	}
+	answerPositionFlipFT.innerHTML = arrayToPrint;
+}
+
+function printTry(){
+	var triangleStr = "";
+	var triangleSize = 5;
+	for (var j = 1; j <= triangleSize; j++) {
+		for (var i = 1; i <= triangleSize; i++) {
+			if (j>=i) {
+				triangleStr += "*";
+			}
+		}triangleStr += "</br>";
+	}
+	printTryArea.innerHTML = triangleStr;
+}
+
+function divideByTen(){
+	var intDividedNumber = Number(dividedNumber.value);
+	intDividedNumber = intDividedNumber/10;
+	answerDivided.innerHTML = "Number as is: " + intDividedNumber;
+	intDividedNumber = Math.round(intDividedNumber);
+	answerDividedRound.innerHTML = "Number rounded: " + intDividedNumber;
+}
+
+function flipTheString(){
+	var stringToFlipTemp = stringToFlip.value;
+	var stringToFlipOut = "";
+	var intOfStringToFlip = Number(stringToFlip.value.length);
+	for (i = 0 ; i < intOfStringToFlip ; i++) {
+		stringToFlipOut = stringToFlipTemp.charAt(i) + stringToFlipOut;
+	}
+	answerFlippedString.innerHTML = "This is the string flipped: " + stringToFlipOut;
+}
+
+function orenNumber(){
+	var stringToConvertTemp = stringToConvert.value;
+	theNumberBefore.innerHTML = "This is the string as number: " + stringToConvertTemp + " " + typeof(stringToConvertTemp);	
+	var stringToConvertTemp = stringToConvert.value - 0;
+	theNumberBack.innerHTML = "This is the string as number: " + stringToConvertTemp + " " + typeof(stringToConvertTemp);
 }
 
 //In the main screen functions
@@ -361,37 +378,6 @@ function PromptCheckAge2(){
 		alert("You can drive");
 	} else {
 		alert("Please go to see your doctor");
-	}
-}
-
-const user = "hackeru";
-const pass = "hacker123";
-
-function PromptlogIn(){
-	var userTemp = prompt ("Please enter your user name");
-	var passTemp = prompt("Please enter your password");
-	if (userTemp == user && passTemp == pass){
-		alert("Welcome");
-		$( "div.warning" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
-	}else {
-		alert ("Wrong password");
-		$( "div.warning" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
-	}
-}
-
-function PromptlogIn2(){	
-	do {
-		var userTemp = prompt ("Enter user name");
-	} while (userTemp  == "");
-	do {
-		var passwordTemp = prompt ("Enter password");
-	}while (passwordTemp == "");
-	if (userTemp == user && passwordTemp == pass){
-		alert("welcome");
-		$( "div.warning" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
-	} else {
-		alert ("Wrong Password");
-		$( "div.warning" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 	}
 }
 
