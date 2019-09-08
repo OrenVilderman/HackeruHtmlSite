@@ -1,3 +1,110 @@
+//Sing Up and Log In
+document.querySelector("#SingUPForm").addEventListener("submit", function(e){
+	// Prevent the form from submitting
+	e.preventDefault();
+	// dbCreate() will be called when the form is submitted
+	dbCreate();
+});
+
+var userSinged;
+var passSinged;
+
+function dbCreate() {
+	userSinged = document.getElementById("SingUPusername").value;
+	passSinged = document.getElementById("SingUPpassword").value;
+	if(userSinged.length > 2 && passSinged.length > 2 ) {
+		userSinged = document.getElementById("SingUPusername").value;
+		passSinged = document.getElementById("SingUPpassword").value;
+		$( "div.success" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+		return true;
+	} else {
+		$( "div.failure" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+		return false;
+	}
+}
+
+document.querySelector("#logInForm").addEventListener("submit", function(e){
+	// Prevent the form from submitting
+	e.preventDefault();
+	// logIn() will be called when the form is submitted
+	logIn();
+});
+
+function logIn() {
+	var user = document.getElementById("username").value;
+	var pass = document.getElementById("password").value;
+	if(user == userSinged && pass == passSinged) {
+		document.querySelector("#membersArea").style.display = "block";
+		$( "div.successL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+		return true;
+	} else {
+		$( "div.failureL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+		return false;
+	}
+}
+
+function logInExercise() {
+	var user = document.getElementById("logInExerciseName").value;
+	var pass = document.getElementById("logInExercisePassword").value;
+	if(user == "hackeru" && pass == "hacker123") {
+		document.querySelector("#membersArea").style.display = "block";
+		$( "div.successL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+		return true;
+	} else {
+		$( "div.failureL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+		return false;
+	}
+}
+
+const user = "hackeru";
+const pass = "hacker123";
+
+function PromptlogIn(){
+	var userTemp = prompt ("Please enter your user name");
+	var passTemp = prompt("Please enter your password");
+	if (userTemp == user && passTemp == pass){
+		alert("Welcome");
+		$( "div.warning" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+	}else {
+		alert ("Wrong password");
+		$( "div.warning" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+	}
+}
+
+function PromptlogIn2(){	
+	do {
+		var userTemp = prompt ("Enter user name");
+	} while (userTemp  == "");
+	do {
+		var passwordTemp = prompt ("Enter password");
+	}while (passwordTemp == "");
+	if (userTemp == user && passwordTemp == pass){
+		alert("welcome");
+		$( "div.warning" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+	} else {
+		alert ("Wrong Password");
+		$( "div.warning" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+	}
+}
+
+function logInTest(){
+	var usersArray = ["oren","aoren","boren","coren","popcorn"];
+		console.log(usersArray.length);
+		console.log(usersArray[0]);
+	for (i = 0; i < usersArray.length; i++) {
+		console.log(i);
+		console.log(usersArray[0]);
+		if (usersArray[i] == document.getElementById("userNameToTest").value){
+		/*if (usersArray[i] == userNameToTest.value) {*/
+			alert("You are logged in !!!");
+			break;
+		} else if (i == usersArray.length-1) {
+			alert("The password or user name is wrong");
+		}
+	}
+}		
+
+
 //Run script from text configuration
 var testStrings = ["function helloWorldTemp() { \n	document.getElementById(\"myTextArea1\").value =\"Hello World!\";\n}\nhelloWorldTemp();",
 	"function showTypeAndValue(str) {\n	document.getElementById('myTextArea1').value = \"The type of the var is: 	\" + typeof(str) + \"\\nThe value of the var is: 	\" + str + \"\\nThe length of the var is: 	\" + ((typeof(str)==\"object\"||typeof(str)=='undefined')? \"Error there is not lenght to \" + typeof(str) : str.length)\n}\nvar name = \"Oren\"; 	//String\nvar num = 2; 		//Number\nvar num1; 		//Undefined\nvar num2 = null; 	//null=object\nshowTypeAndValue(name);",
