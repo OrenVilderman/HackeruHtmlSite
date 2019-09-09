@@ -1,20 +1,20 @@
-//Sing Up and Log In
-document.querySelector("#SingUPForm").addEventListener("submit", function(e){
+//Sign Up and Log In
+document.querySelector("#SignUPForm").addEventListener("submit", function(e){
 	// Prevent the form from submitting
 	e.preventDefault();
 	// dbCreate() will be called when the form is submitted
 	dbCreate();
 });
 
-var userSinged;
-var passSinged;
+var userSigned;
+var passSigned;
 
 function dbCreate() {
-	userSinged = document.getElementById("SingUPusername").value;
-	passSinged = document.getElementById("SingUPpassword").value;
-	if(userSinged.length > 2 && passSinged.length > 2 ) {
-		userSinged = document.getElementById("SingUPusername").value;
-		passSinged = document.getElementById("SingUPpassword").value;
+	userSigned = document.getElementById("SignUPusername").value;
+	passSigned = document.getElementById("SignUPpassword").value;
+	if(userSigned.length > 2 && passSigned.length > 2 ) {
+		userSigned = document.getElementById("SignUPusername").value;
+		passSigned = document.getElementById("SignUPpassword").value;
 		$( "div.success" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 		return true;
 	} else {
@@ -33,7 +33,7 @@ document.querySelector("#logInForm").addEventListener("submit", function(e){
 function logIn() {
 	var user = document.getElementById("username").value;
 	var pass = document.getElementById("password").value;
-	if(user == userSinged && pass == passSinged) {
+	if(user == userSigned && pass == passSigned) {
 		document.querySelector("#membersArea").style.display = "block";
 		$( "div.successL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 		return true;
