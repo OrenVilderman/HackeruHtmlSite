@@ -1,3 +1,22 @@
+:root {
+	--main-bg-image-top: #6ebedf;
+	--main-bg-image-bot: #2751af;
+	--main-base-bg-color: #8e24aa;
+	--main-base-bg-image: #0d47a1;
+	--main-tab-color: #aad6be;
+	--main-tab-bg-color: #1D4187;
+	--main-tab-boarder: #ccc;
+	--main-header-color: black;
+	--main-header-shadow-color: white;
+	--main-inner-button: #e969ff;
+	--main-inner-bg-text: black;
+	--main-inner-text: darkorange;
+}
+
+::placeholder {
+	color:var(--main-inner-text);
+}
+
 header {
     display: grid;
     grid-template-columns: 8% 84% 8%;
@@ -25,18 +44,15 @@ header {
 
 header h1 {
 	margin: 2% 0 3% 0;
-	color: #343434;
 	font-weight: bold;
 	font-family: 'Ultra', sans-serif;   
 	font-size: 450%;
 	line-height: 40%;
 	text-transform: uppercase;
-	text-shadow: 0 2px white, 0 3px #777;
+	text-shadow: 0 2px var(--main-header-shadow-color), 0 3px;
 }
-
 header h2 {
 	margin: 2% 0 2% 0;
-	color: #343434;
 	font-weight: bold;
 	font-size: 150%;
 	line-height: 100%;
@@ -47,16 +63,16 @@ body {font-family: Arial;}
 
 /* Style the tab */
 .tab {
-	color: #aad6be;
-	background-color: #1D4187;
+	color: var(--main-tab-color);
+	background-color: var(--main-tab-bg-color);
 	overflow: hidden;
-	border: 1px solid #ccc;
+	border: 1px solid var(--main-tab-boarder);
 }
 
 /* Style the buttons inside the tab */
 .tab button {
-	color: #aad6be;
-	background-color: #1D4187;
+	color: var(--main-tab-color);
+	background-color: var(--main-tab-bg-color);
 	float: left;
 	border: none;
 	outline: none;
@@ -68,36 +84,40 @@ body {font-family: Arial;}
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-	color: #1D4187;
-	background-color: #aad6be;
+	color: var(--main-tab-bg-color);
+	background-color: var(--main-tab-color);;
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-	color: black;
-	background-color: white;
+	color: var(--main-header-color);
+	background-color: var(--main-header-shadow-color);
 }
 
 /* Style the tab content */
 .tabcontent {
-	background-image: linear-gradient(#8e24aa, #0d47a1);
-	color: white;
+	background-image: linear-gradient(var(--main-base-bg-color), var(--main-base-bg-image));
+	color: var(--main-header-shadow-color);
 	font-weight: 700;
 	display: none;
 	padding: 6px 12px;
-	border: 1px solid #ccc;
+	border: 1px solid var(--main-tab-boarder);
 	border-top: none;
 }
 
-.tabcontent button{
-	color: #450728;
-	background-color: #e969ff;
+.tabcontent button {
+	color: var(--main-header-color);
+	background-color: var(--main-inner-button);
 	font-weight: bold;
 }
 
-.left{display:inline-block; float:left; width: 10%; height: 100px; padding: 5px;}
-.right{display:inline-block; float:right; width: 10%; height: 100px; padding: 5px;}
-.center{display:inline-block; float:center; width: 60%; height: 100px; padding: 5px;}
+.tabcontent .collapsible{
+	background-image: linear-gradient(var(--main-bg-image-top), var(--main-bg-image-bot));
+}
+
+.left{display:block; float:left; width: 10%; height: 100px; padding: 5px;}
+.right{display:block; float:right; width: 10%; height: 100px; padding: 5px;}
+.center{display:block; float:center; width: 60%; height: 100px; padding: 5px;}
 .center button {
 	display: inline-block;
 	border-radius: 4px;
@@ -139,6 +159,12 @@ body {font-family: Arial;}
 	right: 0;
 }
 
+textarea {
+    color: var(--main-inner-text);
+    background: var(--main-inner-bg-text);;
+    border-radius: 8px;
+}
+
 .Form {
 	width: 250px;
 	clear: both;
@@ -147,17 +173,29 @@ body {font-family: Arial;}
 .Form input[type="text"]{
 	width: 100%;
 	clear: both;
+    color: var(--main-inner-text);
+    background: var(--main-inner-bg-text);;
+    border-radius: 3px;
 }
 
 .Form input[type="password"]{
 	width: 100%;
 	clear: both;
+    color: var(--main-inner-text);
+    background: var(--main-inner-bg-text);;
+    border-radius: 3px;
 }
 
 .Form input[type="submit"] {
 	background-color: #18FFFF;
 	font-weight: bold;
 	font-family: Comic;
+}
+
+.tabcontent input[type="text"], input[type="password"], input[type="number"] {
+    color: var(--main-inner-text);
+	background: var(--main-inner-bg-text);
+	border-radius: 3px;
 }
 
 .alert {
@@ -272,12 +310,12 @@ body {font-family: Arial;}
 	max-height: 0;
 	overflow: hidden;
 	transition: max-height 0.2s ease-out;
-	background-image: linear-gradient(#6ebedf, #2751af);
+	background-image: linear-gradient(var(--main-bg-image-top), var(--main-bg-image-bot));
 }
 
 #HackerStyle {
-	background-color: #8e24aa;
-	background-image: #0d47a1;
+	background-color: var(--main-base-bg-color);
+	background-image: var(--main-base-bg-image);
 }
 
 /* Buttons hover */
