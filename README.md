@@ -3,7 +3,8 @@ This is a site I created after 3 JS lessons in HackerU Israel - I am planing to 
 
 >>> [My HackerU website](https://hackerusitebyorenvilderman.netlify.com/)
 
+# Sign Up area
+![image](https://user-images.githubusercontent.com/46252621/64912910-d56ac800-d73e-11e9-9392-be313fbcf704.png)
 
-![image](https://user-images.githubusercontent.com/46252621/64912820-36919c00-d73d-11e9-8506-8531ee695504.png)
-
-![image](https://user-images.githubusercontent.com/46252621/64912822-40b39a80-d73d-11e9-93c8-3e3af7d5cc05.png)
+# The Playground area
+![image](https://user-images.githubusercontent.com/46252621/64912909-cf74e700-d73e-11e9-807b-a005b917f0dc.png)
