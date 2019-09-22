@@ -6,11 +6,20 @@
 	--main-tab-color: #aad6be;
 	--main-tab-bg-color: #1D4187;
 	--main-tab-boarder: #ccc;
-	--main-header-color: black;
 	--main-header-shadow-color: white;
 	--main-inner-button: #e969ff;
 	--main-inner-bg-text: black;
 	--main-inner-text: darkorange;
+	--Form-button: #18FFFF;
+	--main-alert-color: #f44336;
+	--main-alert-base-color: #ebebeb;
+	--main-success-bg-color: #4CAF50;
+	--main-success-border-color: #d6e9c6;
+	--main-failure-bg-color: #f44336;
+	--main-failure-border-color: #ebccd1;
+	--main-warning-bg-color: #ff9800;
+	--main-warning-border-color: #faebcc;	
+	--main-collapsible-bg-color: #777;	
 }
 
 ::placeholder {
@@ -84,12 +93,12 @@ body {font-family: Arial;}
 /* Change background color of buttons on hover */
 .tab button:hover {
 	color: var(--main-tab-bg-color);
-	background-color: var(--main-tab-color);;
+	background-color: var(--main-tab-color);
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-	color: var(--main-header-color);
+	color: var(--main-inner-bg-text);
 	background-color: var(--main-header-shadow-color);
 }
 
@@ -105,7 +114,7 @@ body {font-family: Arial;}
 }
 
 .tabcontent button {
-	color: var(--main-header-color);
+	color: var(--main-inner-bg-text);
 	background-color: var(--main-inner-button);
 	font-weight: bold;
 }
@@ -119,9 +128,9 @@ body {font-family: Arial;}
 .center{display:inline-block; float:center; width: 60%; height: 100px; padding: 5px;}
 .center button {
 	border-radius: 4px;
-	background-color: #1D4187 !important;
+	background-color:var(--main-tab-bg-color) !important;
 	border: none;
-	color: #FFFFFF;
+	color: var(--main-header-shadow-color);
 	text-align: center;
 	font-size: 16px;
 	padding: 20px 1px;
@@ -159,20 +168,20 @@ body {font-family: Arial;}
 
 textarea {
     color: var(--main-inner-text);
-    background: var(--main-inner-bg-text);;
+    background: var(--main-inner-bg-text);
     border-radius: 8px;
 }
 
 .Form {
 	width: 250px;
 	clear: both;
-	}
+}
 
 .Form input[type="text"]{
 	width: 100%;
 	clear: both;
     color: var(--main-inner-text);
-    background: var(--main-inner-bg-text);;
+    background: var(--main-inner-bg-text);
     border-radius: 3px;
 }
 
@@ -180,12 +189,12 @@ textarea {
 	width: 100%;
 	clear: both;
     color: var(--main-inner-text);
-    background: var(--main-inner-bg-text);;
+    background: var(--main-inner-bg-text);
     border-radius: 3px;
 }
 
 .Form input[type="submit"] {
-	background-color: #18FFFF;
+	background-color: var(--Form-button);
 	font-weight: bold;
 	font-family: Comic;
 }
@@ -198,17 +207,17 @@ textarea {
 
 .alert {
 	padding: 20px;
-	background-color: #f44336;
-	color: white;
+	background-color: var(--main-alert-color);
+	color: var(--main-header-shadow-color);
 	opacity: 1;
 	transition: opacity 0.6s;
 	margin-bottom: 15px;
 }
 
-.success {
-    color: #ebebeb;
-    background-color: #4CAF50;
-    border-color: #d6e9c6;
+.success, .successL {
+    color: var(--main-alert-base-color);
+    background-color: var(--main-success-bg-color);
+    border-color: var(--main-success-border-color);
     display: none;
 	height: 20px;
 	width: 15%;
@@ -219,10 +228,10 @@ textarea {
 	margin: 2px;
 }
 
-.failure {
-    color: #ebebeb;
-    background-color: #f44336;
-    border-color: #ebccd1;
+.failure, .failureL {
+    color: var(--main-alert-base-color);
+    background-color: var(--main-alert-color);
+    border-color: var(--main-failure-border-color);
     display: none;
 	height: 20px;
 	width: 15%;
@@ -234,9 +243,9 @@ textarea {
 }
 
 .warning {
-    color: #ebebeb;
-    background-color: #ff9800;
-    border-color: #faebcc;
+    color: var(--main-alert-base-color);
+    background-color: var(--main-warning-bg-color);
+    border-color: var(--main-warning-border-color);
     display: none;
 	height: 20px;
 	width: 30%;
@@ -247,37 +256,9 @@ textarea {
 	margin: 2px;
 }
 
-.successL {
-    color: #ebebeb;
-    background-color: #4CAF50;
-    border-color: #d6e9c6;
-    display: none;
-	height: 20px;
-	width: 15%;
-	float: right;
-	font-size: 120%;
-	text-align: center;
-	padding: 1% 1px;
-	margin: 2px;
-}
-
-.failureL {
-    color: #ebebeb;
-    background-color: #f44336;
-    border-color: #ebccd1;
-    display: none;
-	height: 20px;
-	width: 15%;
-	float: right;
-	font-size: 120%;
-	text-align: center;
-	padding: 1% 1px;
-	margin: 2px;
-}
-
 .collapsible {
-	background-color: #777;
-	color: white;
+	background-color: var(--main-collapsible-bg-color);
+	color:var(--main-header-shadow-color);
 	cursor: pointer;
 	padding: 18px;
 	width: 100%;
@@ -288,12 +269,12 @@ textarea {
 }
 
 .active.collapsible:hover {
-	background-color: #aad6be;
+	background-color: var(--main-tab-color);
 }
 
 .collapsible:after {
 	content: '\002B';
-	color: white;
+	color: var(--main-header-shadow-color);
 	font-weight: bold;
 	float: right;
 	margin-left: 5px;
