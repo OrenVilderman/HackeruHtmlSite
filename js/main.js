@@ -1,3 +1,8 @@
+//Tabs animation
+$('.tablinks').on('click', function(event) {
+    $('main div[style="display: block;"]').hide().delay(50).slideToggle(400); //.slideDown(200) //"slow"
+});
+
 //Sign Up and Log In
 document.querySelector("#SignUPForm").addEventListener("submit", function(e){
 	// Prevent the form from submitting
@@ -12,10 +17,13 @@ var passSigned;
 function dbCreate() {
 	userSigned = document.getElementById("SignUPusername").value;
 	passSigned = document.getElementById("SignUPpassword").value;
-	if(userSigned.length > 2 && passSigned.length > 2 ) {
-		userSigned = document.getElementById("SignUPusername").value;
-		passSigned = document.getElementById("SignUPpassword").value;
+	dbCreateTest(userSigned,passSigned);
+}
+
+function dbCreateTest(userSignedTemp,passSignedTemp) {
+	if(userSignedTemp.length > 2 && passSignedTemp.length > 2 ) {
 		$( "div.success" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+		document.getElementById('logInMain').click();
 		return true;
 	} else {
 		$( "div.failure" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
@@ -39,6 +47,17 @@ function logIn() {
 		return true;
 	} else {
 		$( "div.failureL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+		return false;
+	}
+}
+
+//Function for testing example
+function logInToTest(strUserName, strUserPass) {
+	var user = strUserName;
+	var pass = strUserPass;
+	if(user == "testName" && pass == "testPass") {
+		return true;
+	} else {
 		return false;
 	}
 }
