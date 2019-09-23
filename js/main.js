@@ -22,12 +22,12 @@ function dbCreate() {
 
 function dbCreateVerification(userSignedTemp,passSignedTemp) {
 	if(userSignedTemp.length > 2 && passSignedTemp.length > 2 ) {
-		location.href="#topPage";
+		location.href="#";
 		$( "div.success" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 		document.getElementById('logInMain').click();
 		return true;
 	} else {
-		location.href="#topPage";
+		location.href="#";
 		$( "div.failure" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 		return false;
 	}
@@ -52,12 +52,12 @@ function logInVerification(user,pass) {
 	var pass = document.getElementById("password").value;
 	if(user == userSigned && pass == passSigned) {
 		document.querySelector("#membersArea").style.display = "block";
-		location.href="#topPage";
+		location.href="#";
 		$( "div.successL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 		document.getElementById('firstClassMain').click();
 		return true;
 	} else {
-		location.href="#topPage";
+		location.href="#";
 		$( "div.failureL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 		return false;
 	}
@@ -83,11 +83,11 @@ function logInExercise() {
 function logInExerciseVerification(user,pass) {
 	if(user == "hackeru" && pass == "hacker123") {
 		document.querySelector("#membersArea").style.display = "block";
-		location.href="#topPage";
+		location.href="#";
 		$( "div.successL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 		return true;
 	} else {
-		location.href="#topPage";
+		location.href="#";
 		$( "div.failureL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 		return false;
 	}
@@ -105,11 +105,11 @@ function PromptlogIn() {
 function PromptlogInVerification(user,pass) {
 	if (user == userConst && pass == passConst){
 		alert("Welcome");
-		location.href="#topPage";
+		location.href="#";
 		$( "div.warning" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 	}else {
 		alert ("Wrong password");
-		location.href="#topPage";
+		location.href="#";
 		$( "div.warning" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 	}
 }
@@ -128,11 +128,11 @@ function PromptlogIn2() {
 function PromptlogIn2Verification(user,pass) {
 	if (user == userConst && pass == passConst){
 		alert("welcome");
-		location.href="#topPage";
+		location.href="#";
 		$( "div.warning" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 	} else {
 		alert ("Wrong Password");
-		location.href="#topPage";
+		location.href="#";
 		$( "div.warning" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 	}
 }
