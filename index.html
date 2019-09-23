@@ -7,7 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
 	<body>
-		<header class="mainView" align="center">
+		<header id="topPage" class="mainView" align="center">
 		     <div class="gif">
 				<img id="myImgR" style="width: 120%; float: left; padding: 50% 50% 50% 50%;" src="img/name.gif" alt="My Picture Oren Vilderman" onclick="window.open('https://github.com/OrenVilderman')" title="Click to go to my GitHub">
 			</div>
@@ -18,7 +18,7 @@
 				<div class="alert-box successL">LogIn Succeeded</div>
 				<div class="alert-box failureL">LogIn Failed</div>
 				<br/><br/>
-				<h1 title="Created by Oren Vilderman">HackerU הספריה של</h1>
+				<h1 id="mainTitle" title="Created by Oren Vilderman">HackerU הספריה של</h1>
 				<h2 title="This is only a demo site, created by HackerU student in Israel">הפריצה שלך להייטק</h2>
 			</div>
 			<div class="gif">
@@ -30,7 +30,7 @@
 			<button class="tablinks" onclick="openTab(event, 'SignUP')">Sign Up</button>
 			<button id="logInMain" class="tablinks" onclick="openTab(event, 'LogIn')">LogIn</button>
 			<div id="membersArea" style="display: none;">
-				<button class="tablinks" onclick="openTab(event, 'firstClass')">First Class</button>
+				<button id="firstClassMain" class="tablinks" onclick="openTab(event, 'firstClass')">First Class</button>
 				<button class="tablinks" onclick="openTab(event, 'secondClass')">Second Class</button>
 				<button class="tablinks" onclick="openTab(event, 'thirdClass')">Third Class</button>
 				<button class="tablinks" onclick="openTab(event, 'fourthClass')">Fourth Class</button>
