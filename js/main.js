@@ -1,3 +1,13 @@
+//Sound implementation
+var playSound = new Audio("login.wav");
+playSound.volume = 0.3;
+
+function fastLogin() {
+	document.querySelector("#membersArea").style.display = "block";
+	location.href="#";
+	document.getElementById('firstClassMain').click();
+	$( "div.successL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+}
 //Tabs animation
 $('.tablinks').on('click', function(event) {
     $('main div[style="display: block;"]').hide().delay(50).slideToggle(400); //.slideDown(200) //"slow"
@@ -47,6 +57,7 @@ function logIn() {
 	logInVerification(user,pass);
 }
 
+document.getElementById('firstClassMain').click();
 function logInVerification(user,pass) {
 	var user = document.getElementById("username").value;
 	var pass = document.getElementById("password").value;
