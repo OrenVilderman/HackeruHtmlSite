@@ -470,29 +470,35 @@ function imgSizeMax(){
 
 //adding tabs functions
 var activeTabname = "";
-var tabListner;
 
 function openTab(evt, tabName) {
-	var i, tabcontent, tablinks;
-	tabcontent = document.getElementsByClassName("tabcontent");
-	for (i = 0; i < tabcontent.length; i++) {
-		tabcontent[i].style.display = "none";
-	}
-	tablinks = document.getElementsByClassName("tablinks");
-	for (i = 0; i < tablinks.length; i++) {
-		tablinks[i].className = tablinks[i].className.replace(" active", "");
-	}
-	document.getElementById(tabName).style.display = "block";
-	evt.currentTarget.className += " active";
-	activeTabname = "#" + tabName	;
-	tabListner = document.getElementsByClassName('mainView')[0];
-	tabListner2 = document.getElementsByClassName('mainView')[1];
-	tabListner.addEventListener('click', function (event) {
+	var tempTabName = tabName;
+	if (document.getElementById(tempTabName).style.display != "block") {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		if (document.getElementsByClassName('tablinks active')){
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(tabName).style.display = "block";
+			evt.currentTarget.className += " active";
+			activeTabname = "#" + tabName;
+			tabListner = document.getElementsByClassName('mainView')[0];
+			tabListner2 = document.getElementsByClassName('mainView')[1];
+			tabListner.addEventListener('click', function (event) {
+				document.querySelector(activeTabname).style.display = "none";
+			});
+			tabListner2.addEventListener('click', function (event) {
+				document.querySelector(activeTabname).style.display = "none";
+			});
+		}
+	} else {
 		document.querySelector(activeTabname).style.display = "none";
-	});
-	tabListner2.addEventListener('click', function (event) {
-		document.querySelector(activeTabname).style.display = "none";
-	});
+	}
 }
 
 //adding collapsible functions
