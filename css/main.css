@@ -169,7 +169,7 @@ body {font-family: Arial;}
 textarea {
     color: var(--main-inner-text);
     background: var(--main-inner-bg-text);
-    border-radius: 8px;
+	border-radius: 8px;
 }
 
 .Form {
