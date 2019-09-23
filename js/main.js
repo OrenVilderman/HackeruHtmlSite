@@ -17,15 +17,17 @@ var passSigned;
 function dbCreate() {
 	userSigned = document.getElementById("SignUPusername").value;
 	passSigned = document.getElementById("SignUPpassword").value;
-	dbCreateTest(userSigned,passSigned);
+	dbCreateVerification(userSigned,passSigned);
 }
 
-function dbCreateTest(userSignedTemp,passSignedTemp) {
+function dbCreateVerification(userSignedTemp,passSignedTemp) {
 	if(userSignedTemp.length > 2 && passSignedTemp.length > 2 ) {
+		location.href="#topPage";
 		$( "div.success" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 		document.getElementById('logInMain').click();
 		return true;
 	} else {
+		location.href="#topPage";
 		$( "div.failure" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 		return false;
 	}
@@ -38,14 +40,24 @@ document.querySelector("#logInForm").addEventListener("submit", function(e){
 	logIn();
 });
 
+
 function logIn() {
+	var user = document.getElementById("username").value;
+	var pass = document.getElementById("password").value;
+	logInVerification(user,pass);
+}
+
+function logInVerification(user,pass) {
 	var user = document.getElementById("username").value;
 	var pass = document.getElementById("password").value;
 	if(user == userSigned && pass == passSigned) {
 		document.querySelector("#membersArea").style.display = "block";
+		location.href="#topPage";
 		$( "div.successL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+		document.getElementById('firstClassMain').click();
 		return true;
 	} else {
+		location.href="#topPage";
 		$( "div.failureL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 		return false;
 	}
@@ -65,55 +77,79 @@ function logInToTest(strUserName, strUserPass) {
 function logInExercise() {
 	var user = document.getElementById("logInExerciseName").value;
 	var pass = document.getElementById("logInExercisePassword").value;
+	logInExerciseVerification(user,pass);
+}
+
+function logInExerciseVerification(user,pass) {
 	if(user == "hackeru" && pass == "hacker123") {
 		document.querySelector("#membersArea").style.display = "block";
+		location.href="#topPage";
 		$( "div.successL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 		return true;
 	} else {
+		location.href="#topPage";
 		$( "div.failureL" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 		return false;
 	}
 }
 
-const user = "hackeru";
-const pass = "hacker123";
+const userConst = "hackeru";
+const passConst = "hacker123";
 
-function PromptlogIn(){
+function PromptlogIn() {
 	var userTemp = prompt ("Please enter your user name");
 	var passTemp = prompt("Please enter your password");
-	if (userTemp == user && passTemp == pass){
+	PromptlogInVerification(userTemp,passTemp);
+}
+
+function PromptlogInVerification(user,pass) {
+	if (user == userConst && pass == passConst){
 		alert("Welcome");
+		location.href="#topPage";
 		$( "div.warning" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 	}else {
 		alert ("Wrong password");
+		location.href="#topPage";
 		$( "div.warning" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 	}
 }
 
-function PromptlogIn2(){	
+
+function PromptlogIn2() {
 	do {
 		var userTemp = prompt ("Enter user name");
 	} while (userTemp  == "");
 	do {
 		var passwordTemp = prompt ("Enter password");
 	}while (passwordTemp == "");
-	if (userTemp == user && passwordTemp == pass){
+	PromptlogIn2Verification(userTemp,passwordTemp);
+}
+
+function PromptlogIn2Verification(user,pass) {
+	if (user == userConst && pass == passConst){
 		alert("welcome");
+		location.href="#topPage";
 		$( "div.warning" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 	} else {
 		alert ("Wrong Password");
+		location.href="#topPage";
 		$( "div.warning" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 	}
 }
 
-function logInTest(){
+function logInTest() {
+	var userTemp = document.getElementById("userNameToTest").value;
+	logInTestVerification(userTemp);
+}
+
+function logInTestVerification(user) {
 	var usersArray = ["oren","aoren","boren","coren","popcorn"];
 		console.log(usersArray.length);
 		console.log(usersArray[0]);
 	for (i = 0; i < usersArray.length; i++) {
 		console.log(i);
 		console.log(usersArray[0]);
-		if (usersArray[i] == document.getElementById("userNameToTest").value){
+		if (usersArray[i] == user){
 		/*if (usersArray[i] == userNameToTest.value) {*/
 			alert("You are logged in !!!");
 			break;
@@ -123,10 +159,9 @@ function logInTest(){
 	}
 }		
 
-
 //Run script from text configuration
 var testStrings = ["function helloWorldTemp() { \n	document.getElementById(\"myTextArea1\").value =\"Hello World!\";\n}\nhelloWorldTemp();",
-	"function showTypeAndValue(str) {\n	document.getElementById('myTextArea1').value = \"The type of the var is: 	\" + typeof(str) + \"\\nThe value of the var is: 	\" + str + \"\\nThe length of the var is: 	\" + ((typeof(str)==\"object\"||typeof(str)=='undefined')? \"Error there is not lenght to \" + typeof(str) : str.length)\n}\nvar name = \"Oren\"; 	//String\nvar num = 2; 		//Number\nvar num1; 		//Undefined\nvar num2 = null; 	//null=object\nshowTypeAndValue(name);",
+	"function showTypeAndValue(str) {\n	document.getElementById('myTextArea1').value = \"The type of the var is: 	\"  +\n	typeof(str) + \"\\nThe value of the var is: 	\" + str +\n	\"\\nThe length of the var is: 	\" + ((typeof(str)==\"object\"||typeof(str)=='undefined')?\n	\"Error there is not lenght to \" + typeof(str) : str.length)\n}\nvar name = \"Oren\"; 	//String\nvar num = 2; 		//Number\nvar num1; 		//Undefined\nvar num2 = null; 	//null=object\nshowTypeAndValue(name);",
 	"var num1 = 5; 	//Number\nvar num2 = 4; 	//Number\nvar temp = num1 + \"+\" + num2 + \" = \" + (num1+num2);\ndocument.getElementById('myTextArea2').value = num1 + \"+\" + num2 + \" = \" + (num1+num2);\n/*document.getElementById('myTextArea2').value = num1 + \"*\" + num2 + \" = \" + (num1*num2);*/\n/*document.getElementById('myTextArea2').value = num1 + \"/\" + num2 + \" = \" + (num1/num2);*/",
 	"var nameFirst = \"Oren\"; 	//String\nvar nameFamily = \"Vilderman\"; 	//String\nvar nameFull = nameFirst+ \" \" + nameFamily;\ndocument.getElementById('myTextArea2').value = \"My full name is: \" + nameFull;\n/*document.getElementById('myTextArea2').value = \"My full name size is: \" + nameFull.length;*/",
 	"function myNum(){\n	var myNum = prompt(\"Entrer a number;\");\n	myNum = Number(myNum);\n	alert(\"The value of your number times 2 will be printed to the console\");\n	alert(\"The value of your number times 2 will be printed to the text area\");\n	console.log(myNum + myNum);\n	document.getElementById('myTextArea3').value = myNum + \"*\" + 2 + \" = \" + (myNum*2);\n}\nmyNum();"]
@@ -357,10 +392,10 @@ function printLargest(){
 	for (var i = 0; i < intUserNumber; i++) {
 		numbersArray[i] = prompt("Enter the next number " + (i+1)+ "/" + intUserNumber);
 	}
-	var largestTemp = numbersArray[0];
+	var largestTemp = Number(numbersArray[0]);
 	for (var i = 0; i < numbersArray.length; i++) {
-		if (largestTemp < numbersArray[i]) {
-			largestTemp = numbersArray[i]
+		if (largestTemp < Number(numbersArray[i])) {
+			largestTemp = Number(numbersArray[i])
 		}
 	}
 	answerPositionLargest.innerHTML = "The Largest number in the array is:  " + largestTemp;
