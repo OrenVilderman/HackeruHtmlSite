@@ -15,7 +15,6 @@
 	--main-alert-base-color: #ebebeb;
 	--main-success-bg-color: #4CAF50;
 	--main-success-border-color: #d6e9c6;
-	--main-failure-bg-color: #f44336;
 	--main-failure-border-color: #ebccd1;
 	--main-warning-bg-color: #ff9800;
 	--main-warning-border-color: #faebcc;	
@@ -30,7 +29,9 @@ header {
     display: grid;
     grid-template-columns: 8% 84% 8%;
 }
-
+.required {
+	color: var(--main-alert-color);
+}
 #myImgR { 
 	transform-origin:50% 50%;
 	animation:3s rotateLeft 3s forwards; 
