@@ -123,9 +123,30 @@ body {font-family: Arial;}
 	background-image: linear-gradient(var(--main-bg-image-top), var(--main-bg-image-bot));
 }
 
-.left{display:inline-block; float:left; width: 10%; height: 100px; padding: 5px;}
-.right{display:inline-block; float:right; width: 10%; height: 100px; padding: 5px;}
-.center{display:inline-block; float:center; width: 60%; height: 100px; padding: 5px;}
+.left{
+	display:inline-block;
+	float:left;
+	width:10%;
+	height:100px;
+	padding:5px;
+}
+
+.right{
+	display:inline-block;
+	float:right;
+	width:10%;
+	height:100px;
+	padding:5px;
+}
+
+.center{
+	display:inline-block;
+	float:center;
+	width:60%;
+	height:100px;
+	padding:5px;
+}
+
 .center button {
 	border-radius: 4px;
 	background-color:var(--main-tab-bg-color) !important;
@@ -167,8 +188,8 @@ body {font-family: Arial;}
 }
 
 textarea {
-    color: var(--main-inner-text);
-    background: var(--main-inner-bg-text);
+	color: var(--main-inner-text);
+	background: var(--main-inner-bg-text);
 	border-radius: 8px;
 }
 
@@ -180,17 +201,17 @@ textarea {
 .Form input[type="text"]{
 	width: 100%;
 	clear: both;
-    color: var(--main-inner-text);
-    background: var(--main-inner-bg-text);
-    border-radius: 3px;
+	color: var(--main-inner-text);
+	background: var(--main-inner-bg-text);
+	border-radius: 3px;
 }
 
 .Form input[type="password"]{
 	width: 100%;
 	clear: both;
-    color: var(--main-inner-text);
-    background: var(--main-inner-bg-text);
-    border-radius: 3px;
+	color: var(--main-inner-text);
+	background: var(--main-inner-bg-text);
+	border-radius: 3px;
 }
 
 .Form input[type="submit"] {
@@ -200,7 +221,7 @@ textarea {
 }
 
 .tabcontent input[type="text"], input[type="password"], input[type="number"] {
-    color: var(--main-inner-text);
+	color: var(--main-inner-text);
 	background: var(--main-inner-bg-text);
 	border-radius: 3px;
 }
@@ -215,10 +236,10 @@ textarea {
 }
 
 .success, .successL {
-    color: var(--main-alert-base-color);
-    background-color: var(--main-success-bg-color);
-    border-color: var(--main-success-border-color);
-    display: none;
+	color: var(--main-alert-base-color);
+	background-color: var(--main-success-bg-color);
+	border-color: var(--main-success-border-color);
+	display: none;
 	height: 20px;
 	width: 15%;
 	float: right;
@@ -229,10 +250,10 @@ textarea {
 }
 
 .failure, .failureL {
-    color: var(--main-alert-base-color);
-    background-color: var(--main-alert-color);
-    border-color: var(--main-failure-border-color);
-    display: none;
+	color: var(--main-alert-base-color);
+	background-color: var(--main-alert-color);
+	border-color: var(--main-failure-border-color);
+	display: none;
 	height: 20px;
 	width: 15%;
 	float: right;
@@ -243,10 +264,10 @@ textarea {
 }
 
 .warning {
-    color: var(--main-alert-base-color);
-    background-color: var(--main-warning-bg-color);
-    border-color: var(--main-warning-border-color);
-    display: none;
+	color: var(--main-alert-base-color);
+	background-color: var(--main-warning-bg-color);
+	border-color: var(--main-warning-border-color);
+	display: none;
 	height: 20px;
 	width: 30%;
 	float: right;
