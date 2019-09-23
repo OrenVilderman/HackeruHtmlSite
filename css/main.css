@@ -29,9 +29,26 @@ header {
     display: grid;
     grid-template-columns: 8% 84% 8%;
 }
+
 .required {
 	color: var(--main-alert-color);
 }
+
+#hackTool {
+	background-color: var(--Form-button);
+    font-weight: bold;
+	font-family: Comic;
+	display: inline-block;
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    font-size: 100%;
+    padding: 3px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 2px;
+}
+
 #myImgR { 
 	transform-origin:50% 50%;
 	animation:3s rotateLeft 3s forwards; 
