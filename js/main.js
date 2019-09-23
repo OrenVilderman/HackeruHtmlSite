@@ -1,5 +1,5 @@
 //Sound implementation
-var playSound = new Audio("login.wav");
+var playSound = new Audio("sound/login.wav");
 playSound.volume = 0.3;
 
 function fastLogin() {
