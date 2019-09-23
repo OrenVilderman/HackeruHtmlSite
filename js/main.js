@@ -50,14 +50,12 @@ document.querySelector("#logInForm").addEventListener("submit", function(e){
 	logIn();
 });
 
-
 function logIn() {
 	var user = document.getElementById("username").value;
 	var pass = document.getElementById("password").value;
 	logInVerification(user,pass);
 }
 
-document.getElementById('firstClassMain').click();
 function logInVerification(user,pass) {
 	var user = document.getElementById("username").value;
 	var pass = document.getElementById("password").value;
@@ -124,7 +122,6 @@ function PromptlogInVerification(user,pass) {
 		$( "div.warning" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 	}
 }
-
 
 function PromptlogIn2() {
 	do {
