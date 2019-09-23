@@ -43,9 +43,9 @@
 			<h3>Sign Up</h3>
 			<p>Please insert your user name and password</p>
 			<form id="SignUPForm" class="Form newHover">
-				User Name: <input id="SignUPusername" type="text" placeholder="User Name | "/>
+				<span class="required">*</span> User Name: </span><input id="SignUPusername" type="text" placeholder="User Name | "required/>
 				<br/><br/>
-				Password: <input id="SignUPpassword" type="password" placeholder="Password | "/>
+				<span class="required">*</span> Password: <input id="SignUPpassword" type="password" placeholder="Password | "required/>
 				<br/><br/>
 				<input type="submit" value="Sign Up">
 			</form>
@@ -54,9 +54,9 @@
 			<h3>LogIn</h3>
 			<p>Please insert your user name and password</p>
 			<form id="logInForm" class="Form newHover">
-				User Name: <input id="username" type="text" placeholder="User Name | "/>
+				<span class="required">*</span> User Name: <input id="username" type="text" placeholder="User Name | "required/>
 				<br/><br/>
-				Password: <input id="password" type="password" placeholder="Password | "/>
+				<span class="required">*</span> Password: <input id="password" type="password" placeholder="Password | "required/>
 				<br/><br/>
 				<input type="submit" value="LogIn">
 			</form>
@@ -109,9 +109,9 @@
 			<div class="content">
 				<h1>LogIn</h1>
 				<form id="firstLessonForm" class="Form">
-					User Name: <input id="logInExerciseName" type="text" placeholder="User Name | "/>
+					<span class="required">*</span> User Name: <input id="logInExerciseName" type="text" placeholder="User Name | "required/>
 					<br/><br/>
-					Password: <input id="logInExercisePassword" type="password" placeholder="password | "/>
+					<span class="required">*</span> Password: <input id="logInExercisePassword" type="password" placeholder="password | "required/>
 					<br/><br/>
 					<input onclick="logInExercise()" type="button" value="LogIn" style="font-family:'Comic';font-weight: bold; background-color: #e969ff;">
 					<input onclick="PromptlogIn2()" type="button" value="Prompt logIn" style="font-family:'Comic';font-weight: bold; background-color: #e969ff;">
@@ -291,7 +291,7 @@
 			<div class="content">
 				<h1>Insert your user name</h1>
 				<form id="justAForm" class="Form">
-					User Name: <input id="userNameToTest" type="text" placeholder="User Name | "/>
+					<span class="required">*</span> User Name: <input id="userNameToTest" type="text" placeholder="User Name | "required/>
 					<br/><br/>
 					<input onclick="logInTest()" type="button" value="Test if i am a registered user" style="font-family:'Comic';font-weight: bold;background-color: #e969ff;">
 					<h6>*oren, aoren, boren, coren, popcorn</h6>
@@ -314,7 +314,7 @@
 			<div class="content">
 				<h4> &bull; Return the largest number from array</h4>
 				<h4> &bull; Print 1 to 100 when if devided by 5 - Five, 3 - Three, both FT</h4>
-				<h4> &bull; print triangle</h4>
+				<h4> &bull; Print triangle</h4>
 				<h4> &bull; Divide by 10 and print full num</h4>
 				<h4> &bull; Flip a string</h4>
 				<h4> &bull; Implement the Number function</h4>
